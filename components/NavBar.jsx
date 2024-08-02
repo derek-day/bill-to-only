@@ -28,32 +28,48 @@ const NavBar = () => {
     <div className="nav-container" data-testid="navbar">
       <Navbar color="light" light expand="md">
         <Container>
-          <NavbarBrand className="logo" />
+          {/* <NavbarBrand className="logo" /> */}
           <NavbarToggler onClick={toggle} data-testid="navbar-toggle" />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar data-testid="navbar-items">
               <NavItem>
                 <PageLink href="/" className="nav-link" testId="navbar-home">
-                  Home
+                  {/* Home */}
+                  <img src="/logo.png" width={100} />
                 </PageLink>
               </NavItem>
               {user && (
                 <>
-                  <NavItem>
-                    <PageLink href="/csr" className="nav-link" testId="navbar-csr">
-                      Client-side rendered page
+                  {/* <NavItem>
+                    <PageLink href="/comdue" className="nav-link" testId="navbar-comdue">
+                      Comdue
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/ssr" className="nav-link" testId="navbar-ssr">
-                      Server-side rendered page
+                    <PageLink href="/daily" className="nav-link" testId="navbar-daily">
+                      Daily
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
-                      External API
+                    <PageLink href="/rcp" className="nav-link" testId="navbar-rcp">
+                      Rep Commissions
                     </PageLink>
                   </NavItem>
+                  <NavItem>
+                    <PageLink href="/sample" className="nav-link" testId="navbar-sample">
+                      Sample Bag
+                    </PageLink>
+                  </NavItem>
+                  <NavItem>
+                    <PageLink href="/territory" className="nav-link" testId="navbar-territory">
+                      Territory Listings
+                    </PageLink>
+                  </NavItem>
+                  <NavItem>
+                    <PageLink href="/ytd" className="nav-link" testId="navbar-ytd">
+                      YTD Critical
+                    </PageLink>
+                  </NavItem> */}
                 </>
               )}
             </Nav>
@@ -65,39 +81,50 @@ const NavBar = () => {
                     className="btn btn-primary btn-margin"
                     tabIndex={0}
                     testId="navbar-login-desktop">
-                    Log in
+                    Log In
                   </AnchorLink>
                 </NavItem>
               )}
               {user && (
-                <UncontrolledDropdown nav inNavbar data-testid="navbar-menu-desktop">
-                  <DropdownToggle nav caret id="profileDropDown">
-                    <img
-                      src={user.picture}
-                      alt="Profile"
-                      className="nav-user-profile rounded-circle"
-                      width="50"
-                      height="50"
-                      decode="async"
-                      data-testid="navbar-picture-desktop"
-                    />
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header data-testid="navbar-user-desktop">
-                      {user.name}
-                    </DropdownItem>
-                    <DropdownItem className="dropdown-profile" tag="span">
-                      <PageLink href="/profile" icon="user" testId="navbar-profile-desktop">
-                        Profile
-                      </PageLink>
-                    </DropdownItem>
-                    <DropdownItem id="qsLogoutBtn">
-                      <AnchorLink href="/api/auth/logout" icon="power-off" testId="navbar-logout-desktop">
-                        Log out
-                      </AnchorLink>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+
+                <NavItem id="qsLogoutBtn">
+                <AnchorLink
+                  href="/api/auth/logout"
+                  className= "btn btn-primary btn-margin mt-2"
+                  icon="power-off"
+                  testId="navbar-logout-mobile">
+                  Log Out
+                </AnchorLink>
+                </NavItem>
+
+                // <UncontrolledDropdown nav inNavbar data-testid="navbar-menu-desktop">
+                //   <DropdownToggle nav caret id="profileDropDown">
+                //     <img
+                //       src={user.picture}
+                //       alt="Profile"
+                //       className="nav-user-profile rounded-circle"
+                //       width="50"
+                //       height="50"
+                //       decode="async"
+                //       data-testid="navbar-picture-desktop"
+                //     />
+                //   </DropdownToggle>
+                //   <DropdownMenu>
+                //     <DropdownItem header data-testid="navbar-user-desktop">
+                //       {user.name}
+                //     </DropdownItem>
+                //     <DropdownItem className="dropdown-profile" tag="span">
+                //       <PageLink href="/profile" icon="user" testId="navbar-profile-desktop">
+                //         Profile
+                //       </PageLink>
+                //     </DropdownItem>
+                //     <DropdownItem id="qsLogoutBtn">
+                //       <AnchorLink href="/api/auth/logout" icon="power-off" testId="navbar-logout-desktop">
+                //         Log out
+                //       </AnchorLink>
+                //     </DropdownItem>
+                //   </DropdownMenu>
+                // </UncontrolledDropdown>
               )}
             </Nav>
             {!isLoading && !user && (
@@ -107,7 +134,7 @@ const NavBar = () => {
                   className="btn btn-primary btn-block"
                   tabIndex={0}
                   testId="navbar-login-mobile">
-                  Log in
+                  Log In
                 </AnchorLink>
               </Nav>
             )}
@@ -144,7 +171,7 @@ const NavBar = () => {
                     className="btn btn-link p-0"
                     icon="power-off"
                     testId="navbar-logout-mobile">
-                    Log out
+                    Log Out
                   </AnchorLink>
                 </NavItem>
               </Nav>

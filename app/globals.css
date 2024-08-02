@@ -1,6 +1,17 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(#DDE3F0, #FAF1EE); */
+  background-color: #e6eaf3 !important;
+}
+
+.navbar {
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+ul {
+  align-items: center;
 }
 
 code {
@@ -36,4 +47,26 @@ p code {
 
 .result-block-container .result-block {
   opacity: 1;
+}
+
+.btn {
+  border-radius: 2rem !important;
+  background-color: #0C303B !important;
+  padding: 0.70rem .75rem !important;
+  font-weight: 600 !important;
+  font-family: 'Josefin';
+}
+
+@font-face {
+  font-family: "Josefin";
+  src: url('/fonts/Josefin.ttf') format("truetype");
+  font-display: swap;
+}
+
+.nav-link {
+  font-family: 'Josefin';
+}
+
+h1,h2,h3,h4,h5,h6,p,a {
+  font-family: 'Josefin';
 }
