@@ -74,3 +74,9 @@ h1,h2,h3,h4,h5,h6,p,a {
 .warn {
   color: red;
 }
+
+.form-background {
+  box-shadow: 0 1px 2px 0 #dfe3ec;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+}

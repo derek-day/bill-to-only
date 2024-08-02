@@ -26,48 +26,47 @@ const Content = () => {
 </>
 )}
 
-    <h1 className="my-4 text-center" data-testid="content-title">
-      Bill-To-Only
-    </h1>
+    <h1 className="my-4 text-center" data-testid="content-title">Bill-To-Only</h1>
     
     {/* {user && (
     <> */}
-      <div className='mt-5'>
-        <h2>Please use this form to submit a Bill-To-Only order</h2>
+      <div className='mt-5 mb-5 p-5 form-background'>
+
+        <h4 className="mb-4" style={{color:"#737373"}}>Please use this form to submit a Bill-To-Only order</h4>
 
         <form>
 
-          <h3><span className='warn'>*</span> Rep ADP #</h3>
+          <h5><span className='warn'>*</span> Rep ADP #</h5>
           <input type="text" name="name" placeholder="Enter ADP # of rep" />
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Account # to bill</h3>
+          <h5><span className='warn'>*</span> Account # to bill</h5>
           <input type="text" name="name" placeholder="Enter account # of the customer to bill" />
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Account # to credit</h3>
+          <h5><span className='warn'>*</span> Account # to credit</h5>
           <input type="text" name="name" placeholder="Enter account # of the account to credit" />
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Model</h3>
+          <h5><span className='warn'>*</span> Model</h5>
           <input type="text" name="name" placeholder="Enter frame model" />
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Color</h3>
+          <h5><span className='warn'>*</span> Color</h5>
           <input type="text" name="name" placeholder="Enter frame color" />
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Eye</h3>
+          <h5><span className='warn'>*</span> Eye</h5>
           <input type="text" name="name" placeholder="Enter frame eye size" />
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Replace sample?</h3>
+          <h5><span className='warn'>*</span> Replace sample?</h5>
           {/* Yes/No checkbox */}
             <input type="radio" id="html" name="fav_language" value="Yes" />
             <label for="yes">Yes</label><br />
@@ -76,7 +75,7 @@ const Content = () => {
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Send cases?</h3>
+          <h5><span className='warn'>*</span> Send cases?</h5>
           {/* Yes/No checkbox */}
           <input type="radio" id="html" name="fav_language" value="Yes" />
           <label for="yes">Yes</label><br />
@@ -85,7 +84,7 @@ const Content = () => {
 
           <br/><br/>
 
-          <h3><span className='warn'>*</span> Use courtesy?</h3>
+          <h5><span className='warn'>*</span> Use courtesy?</h5>
           {/* Yes/No checkbox */}
           <input type="radio" id="html" name="fav_language" value="Yes" />
           <label for="yes">Yes</label><br />
@@ -94,10 +93,10 @@ const Content = () => {
 
           <br/><br/>
 
-          <h3>Comments</h3>
+          <h5>Comments</h5>
           {/* Comment box */}
           <textarea name="comment" form="usrform"></textarea>
-          <h4>Please note that entering comments may delay this Bill-To-Only order due to manual processing.</h4>
+          <p style={{color:"#737373"}}>Please note that entering comments may delay this Bill-To-Only order due to manual processing.</p>
 
           <br/><br/>
 
@@ -106,8 +105,7 @@ const Content = () => {
 
         </form>
 
-
-        <h4><span className='warn'>*</span> - required fields</h4>
+        <h6><span className='warn'>*</span> - required fields</h6>
       </div>
     {/* </>
     )} */}
