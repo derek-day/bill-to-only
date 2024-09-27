@@ -14,6 +14,12 @@ const Content = () => {
     document.title = 'Tura | Bill-To-Only';
   }, []);
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    console.log(data);
+  }
+
   function eraseText() {
     document.getElementById("comment").value = "";
   }
@@ -48,7 +54,7 @@ const Content = () => {
         <h5><span className='warn'>*</span> - required fields</h5>
         <br></br><br></br>
 
-        <form>
+        <form onSubmit={handleSubmit}>
 
           <h5><span className='warn'>*</span> Rep ADP #</h5>
           <input className='mb-3' type="text" name="name" placeholder="Enter ADP # of rep" size="70" />
@@ -81,7 +87,6 @@ const Content = () => {
 
           <div className="mb-4">
             <h5><span className='warn'>*</span> Replace sample?</h5>
-            {/* Yes/No checkbox */}
             <input type="radio" id="html" name="fav_language" value="Yes" />
             <label for="yes" style={{paddingLeft:"0.25rem"}}>Yes</label><br />
             <input type="radio" id="css" name="fav_language" value="No" />
@@ -90,7 +95,6 @@ const Content = () => {
 
           <div className="mb-4">
             <h5><span className='warn'>*</span> Send cases?</h5>
-            {/* Yes/No checkbox */}
             <input type="radio" id="html" name="fav_language" value="Yes" />
             <label for="yes" style={{paddingLeft:"0.25rem"}}>Yes</label><br />
             <input type="radio" id="css" name="fav_language" value="No" />
@@ -99,7 +103,6 @@ const Content = () => {
 
           <div className="mb-5">
             <h5><span className='warn'>*</span> Use courtesy?</h5>
-            {/* Yes/No checkbox */}
             <input type="radio" id="html" name="fav_language" value="Yes" />
             <label for="yes" style={{paddingLeft:"0.25rem"}}>Yes</label><br />
             <input type="radio" id="css" name="fav_language" value="No" />
@@ -108,12 +111,11 @@ const Content = () => {
 
           <div className="mb-5">
             <h5>Comments</h5>
-            {/* Comment box */}
             <textarea id="comment" name="comment" form="usrform" rows="4" cols="70"></textarea>
             <p style={{color:"#5f5f5f"}}>Note that entering comments may delay this Bill-To-Only order due to manual processing.</p>
           </div>
 
-          <button className='btobutton' type="button" style={{marginRight:"1rem"}} onClick={sendMail}>Submit</button>
+          <button className='btobutton' type="submit" style={{marginRight:"1rem"}}>Submit</button>
           <input className='btobutton' type="reset" value="Reset" onClick={eraseText} />
 
         </form>
