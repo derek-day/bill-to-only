@@ -45,7 +45,7 @@ const Content = () => {
       <div className='mt-5 mb-5 p-5 form-background'>
 
         <h4 className="mb-4" style={{color:"#5f5f5f"}}>Please use this form to submit a Bill-To-Only order</h4>
-        <h6><span className='warn'>*</span> - required fields</h6>
+        <h5><span className='warn'>*</span> - required fields</h5>
         <br></br><br></br>
 
         <form>
@@ -110,7 +110,7 @@ const Content = () => {
             <h5>Comments</h5>
             {/* Comment box */}
             <textarea id="comment" name="comment" form="usrform" rows="4" cols="70"></textarea>
-            <p style={{color:"#5f5f5f"}}>Please note that entering comments may delay this Bill-To-Only order due to manual processing.</p>
+            <p style={{color:"#5f5f5f"}}>Note that entering comments may delay this Bill-To-Only order due to manual processing.</p>
           </div>
 
           <button className='btobutton' type="button" style={{marginRight:"1rem"}} onClick={sendMail}>Submit</button>
