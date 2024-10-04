@@ -7,18 +7,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import contentData from '../utils/contentData';
 import { useUser } from '@auth0/nextjs-auth0/client';
 
+import axios from "axios";
+import { useForm } from 'react-hook-form';
+
 const Content = () => {
   const { user, isLoading } = useUser();
+
+  const {
+    register,
+    handleSubmit,
+    formSubmit: { isSubmitting },
+  } = useForm();
+  const [successMessage, setSuccessMessage] = useState("");
+
+  function onSubmit(data) {
+    axios
+      .post("", data)
+      .then((response) => {
+        setSuccessMessage(
+          'Thanks for signing up!'
+        );
+      })
+      .catch((e) => console.error(e));
+  }
 
   useEffect(() => {
     document.title = 'Tura | Bill-To-Only';
   }, []);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    console.log(data);
-  }
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   const data = new FormData(e.currentTarget);
+  //   console.log(data);
+  // }
 
   function eraseText() {
     document.getElementById("comment").value = "";
@@ -54,7 +75,8 @@ const Content = () => {
         <h5><span className='warn'>*</span> - required fields</h5>
         <br></br><br></br>
 
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={sendMail}> */}
+        <form onSubmit={handleSubmit(onSubmit)}>
 
           <h5><span className='warn'>*</span> Rep ADP #</h5>
           <input className='mb-3' type="text" name="name" placeholder="Enter ADP # of rep" size="70" />
@@ -115,7 +137,8 @@ const Content = () => {
             <p style={{color:"#5f5f5f"}}>Note that entering comments may delay this Bill-To-Only order due to manual processing.</p>
           </div>
 
-          <button className='btobutton' type="submit" style={{marginRight:"1rem"}}>Submit</button>
+          {/* <button className='btobutton' type="submit" style={{marginRight:"1rem"}}>Submit</button> */}
+          <button role="submit" className='btobutton' style={{marginRight:"1rem"}}>{isSubmitting ? "Submitting" : "Submit"}</button>
           <input className='btobutton' type="reset" value="Reset" onClick={eraseText} />
 
         </form>
