@@ -53,9 +53,9 @@ const Content: FC = () => {
 
 {user && (
     <>
-      <h3 className="mb-5 text-center" data-testid="content-title">
+      {/* <h3 className="mb-5 text-center" data-testid="content-title">
         Welcome, {user.first}
-      </h3>
+      </h3> */}
 </>
 )}
 
@@ -77,32 +77,32 @@ const Content: FC = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
 
           <h5><span className='warn'>*</span> Rep ADP #</h5>
-          <input className='mb-3' type="text" name="name" placeholder="Enter ADP # of rep" size="70" {...register('adp', {required: true})} />
+          <input className='mb-3' type="text" name="name" placeholder="Enter ADP # of rep" size={70} {...register('adp', {required: true})} />
 
           <br/><br/>
 
           <h5><span className='warn'>*</span> Account # to bill</h5>
-          <input className='mb-3' type="text" name="name" placeholder="Enter account # of the customer to bill" size="70" {...register('toBill', {required: true})} />
+          <input className='mb-3' type="text" name="name" placeholder="Enter account # of the customer to bill" size={70} {...register('toBill', {required: true})} />
 
           <br/><br/>
 
           <h5><span className='warn'>*</span> Account # to credit</h5>
-          <input className='mb-3' type="text" name="name" placeholder="Enter account # of the account to credit" size="70" {...register('toCredit', {required: true})} />
+          <input className='mb-3' type="text" name="name" placeholder="Enter account # of the account to credit" size={70} {...register('toCredit', {required: true})} />
 
           <br/><br/>
 
           <h5><span className='warn'>*</span> Model</h5>
-          <input className='mb-3' type="text" name="name" placeholder="Enter frame model" size="70" {...register('model', {required: true})} />
+          <input className='mb-3' type="text" name="name" placeholder="Enter frame model" size={70} {...register('model', {required: true})} />
 
           <br/><br/>
 
           <h5><span className='warn'>*</span> Color</h5>
-          <input className='mb-3' type="text" name="name" placeholder="Enter frame color" size="70" {...register('color', {required: true})} />
+          <input className='mb-3' type="text" name="name" placeholder="Enter frame color" size={70} {...register('color', {required: true})} />
 
           <br/><br/>
 
           <h5><span className='warn'>*</span> Eye</h5>
-          <input className='mb-5' type="text" name="name" placeholder="Enter frame eye size" size="70" {...register('eye', {required: true})} />
+          <input className='mb-5' type="text" name="name" placeholder="Enter frame eye size" size={70} {...register('eye', {required: true})} />
 
 
           <div className="mb-4">
@@ -131,7 +131,7 @@ const Content: FC = () => {
 
           <div className="mb-5">
             <h5>Comments</h5>
-            <textarea id="comment" name="comment" form="usrform" rows="4" cols="70" {...register('comment', {required: false})}></textarea>
+            <textarea id="comment" name="comment" form="usrform" rows={4} cols={70} {...register('comment', {required: false})}></textarea>
             <p style={{color:"#5f5f5f"}}>Note that entering comments may delay this Bill-To-Only order due to manual processing.</p>
           </div>
 
