@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     // from: process.env.MY_EMAIL,
     // to: process.env.SEND_EMAIL,
     from: 'derek.andrew.day@gmail.com',
-    to: 'derek.andrew.day@gmail.com',
+    to: 'dday@tura.com',
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Bill-to-Only from ADP: ${adp}`,
     text: `ADP: ${adp} \n \n Account to bill: ${toBill} \n \n Account to credit: ${toCredit} \n \n Model: ${model} \n \n Color: ${color} \n \n Eye: ${eye} \n \n Comments: ${comment}`,
