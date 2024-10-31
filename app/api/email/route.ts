@@ -17,15 +17,19 @@ export async function POST(request: NextRequest) {
       https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
   */
     auth: {
-      user: process.env.MY_EMAIL,
-      pass: process.env.MY_PASSWORD,
+        //test using direct string of email and password instead of using process.env
+      // user: process.env.MY_EMAIL,
+      // pass: process.env.MY_PASSWORD,
+      user: 'derek.andrew.day@gmail.com',
+      pass: 'sljw dbyy ojqj stit',
     },
   });
 
   const mailOptions: Mail.Options = {
-    from: process.env.MY_EMAIL,
-    // to: process.env.MY_EMAIL,
-    to: process.env.SEND_EMAIL,
+    // from: process.env.MY_EMAIL,
+    // to: process.env.SEND_EMAIL,
+    from: 'derek.andrew.day@gmail.com',
+    to: 'derek.andrew.day@gmail.com',
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Bill-to-Only from ADP: ${adp}`,
     text: `ADP: ${adp} \n \n Account to bill: ${toBill} \n \n Account to credit: ${toCredit} \n \n Model: ${model} \n \n Color: ${color} \n \n Eye: ${eye} \n \n Comments: ${comment}`,
